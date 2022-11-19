@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
-import "../styles/antd.less";
-import "../styles/main.less";
+import "../src/styles/antd.less";
+import "../src/styles/main.less";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;

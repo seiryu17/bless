@@ -9,14 +9,63 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import { useRouter } from "next/router";
+
+interface IMenu {
+  key: string;
+  icon: React.ReactNode;
+  label: string;
+  link: string;
+}
 
 interface IProps {
   children: React.ReactNode;
+  activeMenuKey?: string;
 }
 
+const MENU = [
+  {
+    key: "1",
+    icon: <UserOutlined />,
+    label: "Home",
+    link: "/",
+  },
+  {
+    key: "2",
+    icon: <UserOutlined />,
+    label: "Vendor",
+    link: "/vendor",
+  },
+  {
+    key: "3",
+    icon: <VideoCameraOutlined />,
+    label: "Kategori",
+    link: "/kategori",
+  },
+  {
+    key: "4",
+    icon: <UploadOutlined />,
+    label: "Item",
+    link: "/item",
+  },
+  {
+    key: "5",
+    icon: <UploadOutlined />,
+    label: "Pembelian ",
+    link: "/pembelian",
+  },
+  {
+    key: "6",
+    icon: <UserOutlined />,
+    label: "User",
+    link: "/user",
+  },
+] as IMenu[];
+
 const LayoutComponent = (props: IProps) => {
-  const { children } = props;
+  const { children, activeMenuKey } = props;
   const [collapsed, setCollapsed] = useState(false);
+  const router = useRouter();
   return (
     <Layout className="layout" hasSider={true}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -25,23 +74,11 @@ const LayoutComponent = (props: IProps) => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
+          items={MENU}
+          selectedKeys={[activeMenuKey]}
+          onClick={(item) =>
+            router.push(MENU.find((x) => x.key === item.key)?.link as string)
+          }
         />
       </Sider>
       <Layout className="site-layout">
