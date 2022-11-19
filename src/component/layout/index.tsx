@@ -75,7 +75,7 @@ const LayoutComponent = (props: IProps) => {
           mode="inline"
           defaultSelectedKeys={["1"]}
           items={MENU}
-          selectedKeys={[activeMenuKey]}
+          selectedKeys={[activeMenuKey!]}
           onClick={(item) =>
             router.push(MENU.find((x) => x.key === item.key)?.link as string)
           }
