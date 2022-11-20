@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "precommit": "pretty-quick --staged"
+      "precommit": "npm test"
     }
   },
   "lint-staged": {
