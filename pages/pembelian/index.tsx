@@ -1,8 +1,8 @@
-import React from "react";
-import LayoutComponent from "../../src/component/layout";
+import React from 'react'
+import LayoutComponent from '../../src/component/layout'
 
 const Pembelian = () => {
-  return <LayoutComponent activeMenuKey="5">Pembeliann</LayoutComponent>;
-};
+  return <LayoutComponent activeMenuKey='5'>Pembeliann</LayoutComponent>
+}
 
-export default Pembelian;
+export default Pembelian
