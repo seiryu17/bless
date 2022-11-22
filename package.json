@@ -40,9 +40,6 @@
     "*.{ts,tsx}": [
       "eslint --quiet --fix"
     ],
-    "*.{json,md,html}": [
-      "prettier --write"
-    ],
     "*.js": "eslint --cache --fix"
   }
 }
