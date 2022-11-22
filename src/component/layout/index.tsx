@@ -75,10 +75,8 @@ const LayoutComponent = (props: IProps) => {
           mode='inline'
           defaultSelectedKeys={['1']}
           items={MENU}
-          selectedKeys={[activeMenuKey]}
-          onClick={(item) =>
-            router.push(MENU.find((x) => x.key === item.key)?.link as string)
-          }
+          selectedKeys={[activeMenuKey!]}
+          onClick={}
         />
       </Sider>
       <Layout className='site-layout'>
