@@ -1,7 +1,3 @@
-import { Layout, Menu } from 'antd'
-import { Content, Header } from 'antd/lib/layout/layout'
-import Sider from 'antd/lib/layout/Sider'
-import React, { useState } from 'react'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -9,7 +5,11 @@ import {
   UserOutlined,
   VideoCameraOutlined
 } from '@ant-design/icons'
+import { Layout, Menu } from 'antd'
+import { Content, Header } from 'antd/lib/layout/layout'
+import Sider from 'antd/lib/layout/Sider'
 import { useRouter } from 'next/router'
+import React, { useState } from 'react'
 
 interface IMenu {
   key: string
@@ -76,8 +76,13 @@ const LayoutComponent = (props: IProps) => {
           defaultSelectedKeys={['1']}
           items={MENU}
           selectedKeys={[activeMenuKey!]}
-          onClick={}
-r className='site-layout-background' style={{ padding: 0 }}>
+          onClick={() =>
+            router.push(MENU.find((x) => x.key === activeMenuKey)?.link!)
+          }
+        />
+      </Sider>
+      <Layout className='site-layout'>
+        <Header className='site-layout-background' style={{ padding: 0 }}>
           {React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
