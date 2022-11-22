@@ -1,7 +1,7 @@
-import LayoutComponent from "../src/component/layout";
+import LayoutComponent from '../src/component/layout'
 
 const Home = () => {
-  return <LayoutComponent activeMenuKey="1">a</LayoutComponent>;
-};
+  return <LayoutComponent activeMenuKey='1'>ab</LayoutComponent>
+}
 
-export default Home;
+export default Home
