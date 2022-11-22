@@ -76,13 +76,8 @@ const LayoutComponent = (props: IProps) => {
           defaultSelectedKeys={['1']}
           items={MENU}
           selectedKeys={[activeMenuKey!]}
-          onClick={(item) =>
-            router.push(MENU.find((x) => x.key === item.key)?.link as string)
-          }
-        />
-      </Sider>
-      <Layout className='site-layout'>
-        <Header className='site-layout-background' style={{ padding: 0 }}>
+          onClick={}
+r className='site-layout-background' style={{ padding: 0 }}>
           {React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
